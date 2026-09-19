@@ -1,3 +1,4 @@
+// vite.config.js
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -7,13 +8,14 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
-    minify: 'esbuild',
+    minify: 'oxc',          // ← changed from 'esbuild' to 'oxc'
     target: 'es2020',
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Split curriculum data into its own chunk for better caching
-          curriculum: ['./src/data/index.js']
+        manualChunks(id) {
+          if (id.includes('/src/data/')) return 'curriculum';
+          if (id.includes('node_modules')) return 'vendor';
+          return undefined;
         }
       }
     }
