@@ -1,0 +1,30 @@
+/* layout.css */
+.app-shell { min-height: 100vh; }
+.grade-bar {
+  background: linear-gradient(90deg, var(--pink), var(--purple), var(--blue));
+  color: #fff; padding: 10px 20px;
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  font-weight: 800; box-shadow: 0 3px 10px rgba(0,0,0,.15);
+  position: sticky; top: 0; z-index: 100;
+}
+.grade-bar .title { font-size: 1.1rem; margin-right: auto; }
+.grade-bar button {
+  padding: 8px 14px; border-radius: 12px; border: 2px solid #fff;
+  background: rgba(255,255,255,.15); color: #fff;
+  cursor: pointer; font-weight: 800; font-family: inherit;
+  font-size: .9rem; transition: transform .15s;
+}
+.grade-bar button:hover { transform: translateY(-2px); background: rgba(255,255,255,.3); }
+.grade-bar button.active { background: #fff; color: var(--purple); }
+
+.app { display: grid; grid-template-columns: 320px 1fr; min-height: calc(100vh - 60px); }
+@media (max-width: 900px) { .app { grid-template-columns: 1fr; } }
+aside {
+  background: linear-gradient(180deg, #fff2e0, #ffe9d6);
+  border-right: 4px dashed var(--line);
+  padding: 20px; height: calc(100vh - 60px);
+  overflow-y: auto; position: sticky; top: 60px;
+}
+@media (max-width: 900px) { aside { position: static; height: auto; } }
+main { padding: 24px 32px 60px; max-width: 1100px; }
+@media (max-width: 900px) { main { padding: 16px; } }

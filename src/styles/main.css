@@ -1,0 +1,24 @@
+/* main.css — variables & resets */
+:root {
+  --bg: #fff9f0;
+  --panel: #ffffff;
+  --ink: #2b2b3d;
+  --muted: #7a7a95;
+  --line: #ffe0c2;
+  --pink: #ff6fae;
+  --blue: #4fa8ff;
+  --green: #38c172;
+  --yellow: #ffd23f;
+  --purple: #a06cff;
+  --orange: #ff8c42;
+  --shadow: 0 6px 0 rgba(0,0,0,.08);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'Comic Sans MS', 'Baloo 2', 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 17px;
+}
